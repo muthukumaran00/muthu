@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scientific Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .calculator {
+      width: 300px;
+      margin: 0 auto;
+      padding: 50px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+    }
+    input[type="text"], input[type="button"] {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 15px;
+      font-size: 20px;
+    }
+    .display {
+      height: 90px;
+      font-size: 40px;
+      text-align: right;
+      padding: 10px;
+      margin-bottom: 30px;
+    }
+    .row {
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+
+<div class="calculator">
+  <input type="text" class="display" id="display" disabled>
+  <div class="row">
+    <input type="button" value="(" onclick="addToDisplay('(')">
+    <input type="button" value=")" onclick="addToDisplay(')')">
+    <input type="button" value="C" onclick="clearDisplay()">
+    <input type="button" value="DEL" onclick="deleteLast()">
+  </div>
+  <div class="row">
+    <input type="button" value="7" onclick="addToDisplay('7')">
+    <input type="button" value="8" onclick="addToDisplay('8')">
+    <input type="button" value="9" onclick="addToDisplay('9')">
+    <input type="button" value="/" onclick="addToDisplay('/')">
+  </div>
+  <div class="row">
+    <input type="button" value="4" onclick="addToDisplay('4')">
+    <input type="button" value="5" onclick="addToDisplay('5')">
+    <input type="button" value="6" onclick="addToDisplay('6')">
+    <input type="button" value="*" onclick="addToDisplay('*')">
+  </div>
+  <div class="row">
+    <input type="button" value="1" onclick="addToDisplay('1')">
+    <input type="button" value="2" onclick="addToDisplay('2')">
+    <input type="button" value="3" onclick="addToDisplay('3')">
+    <input type="button" value="-" onclick="addToDisplay('-')">
+  </div>
+  <div class="row">
+    <input type="button" value="0" onclick="addToDisplay('0')">
+    <input type="button" value="." onclick="addToDisplay('.')">
+    <input type="button" value="=" onclick="calculate()">
+    <input type="button" value="+" onclick="addToDisplay('+')">
+  </div>
+  <div class="row">
+    <input type="button" value="sin" onclick="trigFunction('sin')">
+    <input type="button" value="cos" onclick="trigFunction('cos')">
+    <input type="button" value="tan" onclick="trigFunction('tan')">
+    <input type="button" value="sqrt" onclick="mathFunction('sqrt')">
+  </div>
+</div>
+
+<script>
+  function addToDisplay(value) {
+    document.getElementById('display').value += value;
+  }
+
+  function clearDisplay() {
+    document.getElementById('display').value = '';
+  }
+
+  function deleteLast() {
+    var currentValue = document.getElementById('display').value;
+    document.getElementById('display').value = currentValue.slice(0, -1);
+  }
+
+  function calculate() {
+    try {
+      document.getElementById('display').value = eval(document.getElementById('display').value);
+    } catch (error) {
+      document.getElementById('display').value = 'Error';
+    }
+  }
+
+  function trigFunction(func) {
+    var currentValue = document.getElementById('display').value;
+    document.getElementById('display').value = Math[func](eval(currentValue));
+  }
+
+  function mathFunction(func) {
+    var currentValue = document.getElementById('display').value;
+    document.getElementById('display').value = Math[func](eval(currentValue));
+  }
+</script>
+
+</body>
+</html>
