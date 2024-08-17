@@ -1,37 +1,27 @@
 import java.util.Scanner;
 
 public class calculater{
-    static void result(double res,double x,double y,String s){
-        System.out.println("***ANSWER***");
-        System.out.print(x);
-        System.out.print(" "+s);
-        System.out.print(" "+y);
-        System.out.println(" = "+res);
-    }
-    static void add(double x,double y){
+
+    double add(double x,double y){
         double res = 0;
-        String s = "+";
         res = x+y;
-        result(res,x,y,s);
+        return res;
     }
-    static void sub(double x,double y){
+    double sub(double x,double y){
         double res = 0;
-        String s = "-";
         res = x-y;
-        result(res,x,y,s);
+        return res;
     }
-    static void mul(double x,double y){
+    double mul(double x,double y){
         double res = 0;
-        String s = "x";
         res = x*y;
-        result(res,x,y,s);
+        return res;
     }
-    static void dev(double x,double y){
+    double dev(double x,double y){
         double res = 0;
-        String s = "/";
         if(y!=0){
             res = x/y;
-            result(res,x,y,s);
+            return res;
         }
         else{
             System.out.println("THE SECOND VALUE IS 0!");
@@ -39,10 +29,13 @@ public class calculater{
             System.out.print(x);
             System.out.print(" / "+y);
             System.out.println(" = INFINITY");
+            System.exit(0);
+            return res;
         }
-        }
+    }
     public static void main(String[] args){
         Scanner muthu = new Scanner(System.in);
+
 
         System.out.println("Enter your select:");
         System.out.println("1.Addition");
@@ -53,19 +46,24 @@ public class calculater{
         int a = muthu.nextInt();
 
         String h = "";
+        String s = "";
 
         switch(a){
             case 1:
                 h = "***ADDITION***";
+                s = "+";
                 break;
             case 2:
                 h = "***SUBTRATION***";
+                s = "-";
                 break;
             case 3:
                 h = "***MULTIPLE***";
+                s = "*";
                 break;
             case 4:
                 h = "***DIVITION***";
+                s = "/";
                 break;
             case 5:
                 System.out.println("Ending...");
@@ -80,22 +78,32 @@ public class calculater{
         System.out.println("Enter your second number");
         double y = muthu.nextDouble();
 
+        calculater ans = new calculater();
+
+        double resf = 0;
+
         switch(a){
             case 1:
-                add(x,y);
+                resf = ans.add(x,y);
                 break;
             case 2:
-                sub(x,y);
+                resf = ans.sub(x,y);
                 break;
             case 3:
-                mul(x,y);
+                resf = ans.mul(x,y);
                 break;
             case 4:
-                dev(x,y);
+                resf = ans.dev(x,y);
                 break;
         default:
             System.out.println("Enter the correct value:");
             break;
         }    
+
+        System.out.println("***ANSWER***");
+        System.out.print(x);
+        System.out.print(" "+s);
+        System.out.print(" "+y);
+        System.out.println(" = "+resf);
     }
 }
