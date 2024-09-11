@@ -1,0 +1,100 @@
+body {
+    background-color: rgb(85, 195, 238);
+}
+h1 {
+    width: 300px;
+}
+/*form{
+    border:1px solid red;
+}*/
+.page {
+    height: 400px;
+    width: 260px;
+    background-color: white;
+    position: absolute;
+    top: 80px;
+    left: 350px;
+    border:2px solid rgb(69, 156, 190);
+    border-radius: 10px;
+    padding: 40px;
+}
+h1 {
+    position: relative;
+    left:50px;
+    bottom: 20px;
+    color: rgb(45, 106, 131);
+}
+.inputA {
+    width: 95%;
+    height: 30px;
+    border-radius: 10px;
+    background: none;
+    position:relative;
+    right: 10px;
+    bottom: 20px;
+    z-index: 3;
+    margin:10px;
+    transition: all 0.1s ease;
+    border: 2px solid gray;
+}
+.text1,
+.text2,
+.text3 {
+    position: absolute;
+    left:50px;
+    font-size: 1.2em;
+    z-index: 2;
+    transition: all 0.5s ease;
+    background-color: white;
+}
+.text1{
+    top:116px;
+}
+.text2 {
+    top:174px;
+}
+.text3 {
+    top:230px;
+}
+input:focus,
+input:valid {
+    outline:none;
+    border: 2px solid rgb(69, 156, 190);
+    color: rgb(24, 82, 109);
+    font-size: 1.1rm;
+}
+input:focus + .text1,
+input:valid + .text1{
+    top: 98px;
+    color:rgb(69, 156, 190);
+    z-index: 4;
+    font-size: 1em;
+}
+input:focus + .text2,
+input:valid + .text2 {
+    top: 155px;
+    color:rgb(69, 156, 190);
+    z-index: 4;
+    font-size: 1em;
+}
+input:focus + .text3,
+input:valid + .text3 {
+    top: 211px;
+    color:rgb(69, 156, 190);
+    z-index: 4;
+    font-size: 1em;
+}
+.gender {
+    padding: 10px;
+}
+.dob {
+    padding: 10px;
+}
+.submit {
+    position: absolute;
+    bottom: 50px;
+    left:120px;
+}
+button {
+    padding: 5px 20px;
+}

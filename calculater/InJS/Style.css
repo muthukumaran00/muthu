@@ -1,0 +1,105 @@
+.box {
+    height:520px;
+    width:100%;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    /*border:2px solid black;*/
+}
+.page {
+    height:500px;
+    width:350px;
+    border-radius:10px;
+    box-shadow:2.5px 5px 10px gray;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    border:2px solid gray;
+    margin-top: 5rem;
+}
+.page > div {
+    width:70%;
+    /*border:2px solid black;*/
+}
+.tranin {
+    position: relative;
+    padding: 10px 5px;
+    font-size: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: none;
+    height: 20px;
+    transition: 0.2s ease;
+    z-index: 2;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.lfont1,
+.lfont2,
+.lfont3 {
+    position: absolute;
+    top: 180px;
+    left: 405px;
+    padding: 0 5px;
+    transform: translateY(-50%);
+    font-size: 1.2em;
+    color: #999;
+    transition: all 0.3s ease;
+    background-color: white;
+    border-radius: 50%;
+}
+.lfont1{
+    top: 160px;
+}
+.lfont2 {
+    top: 220px;
+}
+.lfont3 {
+    top: 280px;
+}
+input:focus,
+input:valid {
+    outline: none;
+    color: #007bff;
+    border-color: #007bff;
+}
+input:focus + .lfont1,
+input:valid + .lfont1 {
+    top: 140px;
+    left: 395px;
+    z-index: 3;
+    color: #007bff;
+    font-size: 1em;
+    transform: translate(-15px -16px) scale(0.88);
+}
+input:focus + .lfont2,
+input:valid + .lfont2 {
+    top: 200px;
+    left: 395px;
+    z-index: 3;
+    color: #007bff;
+    font-size: 1em;
+    transform: translate(-15px -16px) scale(0.88);
+}
+input:focus + .lfont3,
+input:valid + .lfont3 {
+    top: 260px;
+    left: 395px;
+    z-index: 3;
+    color: #007bff;
+    font-size: 1em;
+    transform: translate(-15px -16px) scale(0.88);
+}
+/*input:focus::placeholder {
+    color: transparent;
+}*/
+
+.next {
+    text-align:center;
+    position:relative;
+    top:20px;
+}
+.next_button {
+    height:30px;
+    width:180px;
+}
